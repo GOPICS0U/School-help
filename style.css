@@ -1,0 +1,174 @@
+/* Variables de couleur */
+:root {
+    --background-color: #1e1e2e;
+    --nav-background: #2a2a3c;
+    --nav-text-color: #e0e0e0;
+    --primary-color: #8ab4f8;
+    --secondary-color: #ff79c6;
+    --text-color: #e0e0e0;
+    --hover-color: #50fa7b;
+    --card-bg: #2d2d3c;
+    --card-hover-bg: #3b3b4f;
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Style global */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Barre de navigation */
+nav {
+    background: var(--nav-background);
+    color: var(--nav-text-color);
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: var(--nav-text-color);
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Centrage des textes */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Conteneur principal */
+.container {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Barre de recherche et liste déroulante */
+input[type="text"], select {
+    width: 50%;
+    max-width: 400px;
+    padding: 0.7rem;
+    margin: 0.5rem auto;
+    display: block;
+    font-size: 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    background: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border: 2px solid var(--hover-color);
+    box-shadow: 0 0 12px var(--hover-color);
+    outline: none;
+}
+
+/* Bouton Rechercher */
+button {
+    display: block;
+    width: 50%;
+    max-width: 200px;
+    padding: 0.7rem;
+    margin: 1rem auto;
+    background: var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: var(--hover-color);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Cartes de vidéos */
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+.video-item {
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s, border 0.3s;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background: var(--card-hover-bg);
+    border: 1px solid var(--hover-color);
+}
+
+.video-item iframe {
+    width: 100%;
+    border: none;
+    height: 180px;
+}
+
+.video-item h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.video-item h3 a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+.video-item h3 a:hover {
+    color: var(--hover-color);
+}
+
+.video-item p {
+    font-size: 0.9rem;
+    margin: 0.5rem;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.video-item small {
+    display: block;
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    color: #aaa;
+}
